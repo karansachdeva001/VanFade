@@ -23,15 +23,15 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.95);
+    background: #111;
     backdrop-filter: blur(10px);
-    padding: 1rem 0;
+    padding: 0.4rem 0;
     z-index: 1000;
     transition: all 0.3s ease;
 }
 
 nav.scrolled {
-    background: rgba(10, 10, 10, 0.98);
+    background:#111;
     box-shadow: 0 2px 20px rgba(212, 175, 55, 0.2);
 }
 
@@ -48,7 +48,7 @@ nav.scrolled {
 }
 
 .logo img {
-    height: 120px;
+    height: 90px;
     width: auto;
     border-radius: 50%;
     background: white;
@@ -114,16 +114,14 @@ nav.scrolled {
 .hero {
     height: 100vh;
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+        linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), 
         url('photos/shop2.jpeg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
 }
 
 .hero-content {
@@ -170,10 +168,25 @@ nav.scrolled {
     box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
 }
 
-/* Services Section */
-.services {
+/* Section Styling */
+.services, .about {
     padding: 100px 0;
-    background: #111;
+    background: 
+        linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.85)), 
+        url('photos/shop1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.gallery {
+    padding: 100px 0;
+    background: 
+    linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.85)), 
+    url('photos/shop2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .section-title {
@@ -194,63 +207,68 @@ nav.scrolled {
     color: #888;
 }
 
+/* Services Grid */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 20px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 16px;
     backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    transition: all 0.4s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    border-color: #d4af37;
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
 }
 
-.service-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(45deg, #d4af37, #f4e4a1);
-    border-radius: 50%;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+.service-image {
+    width: 120px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
+.service-content {
+    flex: 1;
 }
 
 .service-card h3 {
     color: #d4af37;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .service-card p {
-    color: #ccc;
-    margin-bottom: 1rem;
+    color: #bbb;
+    line-height: 1.6;
+    font-size: 0.9rem;
 }
 
-.service-price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #d4af37;
-}
-
-/* Gallery Section */
-.gallery {
-    padding: 100px 0;
-    background: #0a0a0a;
-}
-
+/* Gallery Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -285,10 +303,7 @@ nav.scrolled {
 
 .gallery-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     display: flex;
     align-items: flex-end;
@@ -317,11 +332,6 @@ nav.scrolled {
 }
 
 /* About Section */
-.about {
-    padding: 100px 0;
-    background: #111;
-}
-
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -360,7 +370,7 @@ nav.scrolled {
 
 /* Footer */
 footer {
-    background: #000;
+    background: #111;
     color: #fff;
     text-align: center;
     padding: 3rem 0;
@@ -412,7 +422,7 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsive Design */
+/* Media Queries */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -440,5 +450,22 @@ footer {
 
     .container {
         padding: 0 15px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .service-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .service-image {
+        width: 100px;
+        height: 120px;
+        margin: 0 auto 1rem auto;
     }
 }
