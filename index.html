@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Van Fade Barbershop | Premium Cuts & Grooming</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -39,7 +41,7 @@
         }
 
         nav.scrolled {
-            background:#111;
+            background: #111;
             box-shadow: 0 2px 20px rgba(212, 175, 55, 0.2);
         }
 
@@ -135,8 +137,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), 
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)),
                 url('photos/shop2.jpeg');
             background-size: cover;
             background-position: center;
@@ -191,7 +193,8 @@
         }
 
         /* Section Styling */
-        .services, .about {
+        .services,
+        .about {
             padding: 100px 0;
             background: #111;
         }
@@ -307,7 +310,7 @@
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
             display: flex;
             align-items: flex-end;
             padding: 1.5rem;
@@ -404,6 +407,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -426,7 +430,7 @@
             .logo img {
                 height: 60px;
             }
-            
+
             .logo-text {
                 font-size: 1.4rem;
             }
@@ -453,6 +457,31 @@
 
             .mobile-menu {
                 display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                z-index: 1001;
+                background: #d4af37;
+                border-radius: 50%;
+                padding: 12px;
+                width: 48px;
+                height: 48px;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu:hover {
+                background: #f4e4a1;
+                transform: scale(1.05);
+            }
+
+            .mobile-menu span {
+                width: 20px;
+                height: 2px;
+                background: #000;
+                margin: 2px 0;
+                transition: 0.3s;
+                border-radius: 2px;
             }
 
             .hero h1 {
@@ -491,14 +520,14 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 1rem;
             }
-            
+
             .service-card {
                 flex-direction: column;
                 text-align: center;
                 padding: 1rem;
                 min-height: 200px;
             }
-            
+
             .service-image {
                 width: 80px;
                 height: 100px;
@@ -529,7 +558,7 @@
             /* Show overlay by default on mobile for better UX */
             .gallery-overlay {
                 opacity: 1;
-                background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
             }
 
             .gallery-text h4 {
@@ -540,7 +569,9 @@
                 font-size: 0.8rem;
             }
 
-            .services, .gallery, .about {
+            .services,
+            .gallery,
+            .about {
                 padding: 60px 0;
             }
 
@@ -580,8 +611,51 @@
                 height: 300px;
             }
         }
+
+        /* Floating Book Button */
+        .floating-book-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .floating-book-btn.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-book-btn a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #d4af37, #f4e4a1);
+            color: #000;
+            padding: 12px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .floating-book-btn a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .floating-book-btn {
+                display: block;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav id="navbar">
@@ -636,7 +710,7 @@
                         <p>Professional haircut with precision</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="photos/2.jpeg" alt="Skin Fade" />
@@ -646,7 +720,7 @@
                         <p>Expert skin fade with seamless blending</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="photos/beard.jpeg" alt="Beard Trim" />
@@ -656,7 +730,7 @@
                         <p>Beard trimming with hot towel treatment</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="photos/afro.jpeg" alt="Afro Cut" />
@@ -666,7 +740,7 @@
                         <p>Specialized afro hair cutting and fading</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="photos/kid.jpeg" alt="Kids Cut" />
@@ -676,7 +750,7 @@
                         <p>Gentle, patient service for children</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="photos/towel.PNG" alt="Hot Towel Shave" />
@@ -686,7 +760,7 @@
                         <p>Traditional straight razor with hot towel</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="photos/wax.jpeg" alt="Full Package" />
@@ -696,7 +770,7 @@
                         <p>Haircut, beard trim, waxing & face mask</p>
                     </div>
                 </div>
-                
+
                 <div class="service-card fade-in">
                     <div class="service-image">
                         <img src="photos/old .jpeg" alt="Senior Cut" />
@@ -704,6 +778,16 @@
                     <div class="service-content">
                         <h3>Senior Cut (63+)</h3>
                         <p>Special pricing for seniors over 63</p>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-image">
+                        <img src="photos/caesar.jpeg" alt="Caesar Cut" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Caesar Cut</h3>
+                        <p>Classic Roman-inspired short cut with modern precision and clean lines</p>
                     </div>
                 </div>
             </div>
@@ -719,11 +803,11 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item fade-in">
-                    <img src="photos/3..jpeg" alt="Precision Fade Cut">
+                    <img src="photos/cut11.jpeg" alt="Classic Hair Cuts">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
-                            <h4>Precision Fade</h4>
-                            <p>Expert fade technique with perfect blending</p>
+                            <h4>Classic Cuts</h4>
+                            <p>Timeless styles with modern precision</p>
                         </div>
                     </div>
                 </div>
@@ -737,20 +821,20 @@
                     </div>
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="photos/cut1.jpeg" alt="Beard Grooming">
-                    <div class="gallery-overlay">
-                        <div class="gallery-text">
-                            <h4>Beard Grooming</h4>
-                            <p>Professional beard trimming and hot towel service</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in">
                     <img src="photos/afro.jpeg" alt="Afro Hair Cuts">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h4>Afro Specialist</h4>
                             <p>Expert in afro hair cutting and styling</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="photos/cut1.jpeg" alt="Beard Grooming">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h4>Beard Grooming</h4>
+                            <p>Professional beard trimming and hot towel service</p>
                         </div>
                     </div>
                 </div>
@@ -764,11 +848,11 @@
                     </div>
                 </div>
                 <div class="gallery-item fade-in">
-                    <img src="photos/cut11.jpeg" alt="Classic Hair Cuts">
+                    <img src="photos/commercial.jpeg" alt="Caesar Cut Styling">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
-                            <h4>Classic Cuts</h4>
-                            <p>Timeless styles with modern precision</p>
+                            <h4>Convinient Locations</h4>
+                            <p>Located at Commercial Drive & Downtown Vancouver</p>
                         </div>
                     </div>
                 </div>
@@ -782,9 +866,14 @@
             <div class="about-content">
                 <div class="about-text fade-in">
                     <h2>Master Craftsmanship</h2>
-                    <p>At Van Fade Barbershop, we believe that a great haircut is more than just a service—it's an art form. Our experienced barbers combine traditional techniques with contemporary styles to deliver exceptional results every time.</p>
-                    <p>Located in the heart of Vancouver, we've been serving the community with precision cuts, expert fades, and unmatched attention to detail. Every client leaves feeling confident and looking their absolute best.</p>
-                    <p>Step into our modern shop and experience the difference that true craftsmanship makes. We're not just cutting hair—we're crafting confidence.</p>
+                    <p>At Van Fade Barbershop, we believe that a great haircut is more than just a service—it's an art
+                        form. Our experienced barbers combine traditional techniques with contemporary styles to deliver
+                        exceptional results every time.</p>
+                    <p>Located in the heart of Vancouver, we've been serving the community with precision cuts, expert
+                        fades, and unmatched attention to detail. Every client leaves feeling confident and looking
+                        their absolute best.</p>
+                    <p>Step into our modern shop and experience the difference that true craftsmanship makes. We're not
+                        just cutting hair—we're crafting confidence.</p>
                 </div>
                 <div class="about-image fade-in">
                     <img src="photos/trimmer.jpeg" alt="Barber at work" />
@@ -817,13 +906,22 @@
             <p>&copy; 2025 Van Fade Barbershop. All rights reserved.</p>
         </div>
     </footer>
+    <div class="floating-book-btn" id="floatingBookBtn">
+        <a href="https://vanfadebarbershop.square.site/" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.89-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
+            </svg>
+            Book
+        </a>
+    </div>
 
     <script>
         // Mobile menu toggle functionality
         const mobileMenu = document.getElementById('mobileMenu');
         const navLinks = document.getElementById('navLinks');
 
-        mobileMenu.addEventListener('click', function() {
+        mobileMenu.addEventListener('click', function () {
             mobileMenu.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
@@ -877,6 +975,21 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
+
+        // Floating book button functionality
+        const floatingBookBtn = document.getElementById('floatingBookBtn');
+        const heroSection = document.querySelector('.hero');
+
+        window.addEventListener('scroll', () => {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+            if (window.scrollY > heroBottom - 100) {
+                floatingBookBtn.classList.add('show');
+            } else {
+                floatingBookBtn.classList.remove('show');
+            }
+        });
     </script>
 </body>
+
 </html>
